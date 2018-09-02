@@ -5,12 +5,11 @@ name = "pypi"
 
 [packages]
 pymysql = "*"
-"psycopg2" = "*"
-"psycopg2-binary" = "*"
 uvloop = "*"
 asyncpg = "*"
 flask = "*"
 sanic = "*"
+"psycopg2-binary" = "*"
 
 [dev-packages]
 

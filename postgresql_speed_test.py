@@ -123,22 +123,22 @@ async def main(dbapi, ctx):
         await asyncio.wait(to_do)  # <10>
 
 if __name__ == '__main__':
-    go(psycopg2, profiled)  # sync
-
-    asyncio.set_event_loop_policy(asyncio.DefaultEventLoopPolicy())
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main(asyncpg,profiled))  # async default loop
-
-    asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main(uvloop, profiled))  # async uvloop
-
+    # go(psycopg2, profiled)  # sync
+    #
+    # asyncio.set_event_loop_policy(asyncio.DefaultEventLoopPolicy())
+    # loop = asyncio.get_event_loop()
+    # loop.run_until_complete(main(asyncpg,profiled))  # async default loop
+    #
+    # asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+    # loop = asyncio.get_event_loop()
+    # loop.run_until_complete(main(uvloop, profiled))  # async uvloop
+    #
     go(psycopg2, timeonly)
-
-    asyncio.set_event_loop_policy(asyncio.DefaultEventLoopPolicy())
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main(asyncpg, timeonly))
-
-    asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main(uvloop, timeonly))
+    #
+    # asyncio.set_event_loop_policy(asyncio.DefaultEventLoopPolicy())
+    # loop = asyncio.get_event_loop()
+    # loop.run_until_complete(main(asyncpg, timeonly))
+    #
+    # asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+    # loop = asyncio.get_event_loop()
+    # loop.run_until_complete(main(uvloop, timeonly))
