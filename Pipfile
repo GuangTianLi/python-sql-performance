@@ -1,0 +1,18 @@
+[[source]]
+url = "https://mirrors.aliyun.com/pypi/simple/"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pymysql = "*"
+"psycopg2" = "*"
+"psycopg2-binary" = "*"
+uvloop = "*"
+asyncpg = "*"
+flask = "*"
+sanic = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
