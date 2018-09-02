@@ -17,7 +17,8 @@ pipenv shell
 ```bash
 python postgresql_speed_test.py
 ```
-> DBAPI:  psycopg2
+```
+  DBAPI:  psycopg2
          11004 function calls in 2.235 seconds
   DBAPI:  asyncpg
          471973 function calls in 2.436 seconds
@@ -25,7 +26,8 @@ python postgresql_speed_test.py
          206945 function calls in 0.794 seconds
   DBAPI:  psycopg2, total seconds 2.558364
   DBAPI:  asyncpg, total seconds 2.309759
-  DBAPI:  uvloop, total seconds 2.032303       
+  DBAPI:  uvloop, total seconds 2.032303  
+```     
 
 ## 结论
 从结果上看，对于数据库操作本身，异步对于其性能本身只能算是锦上添花。而异步操作本身则也需要添加对事件循环的处理，
@@ -41,7 +43,8 @@ python postgresql_speed_test.py
 python flask_server_speed_test.py
 ```
 
->✗ wrk -d 60 -c 100 -t 12 --timeout 8 http://127.0.0.1:8080/db
+```
+✗ wrk -d 60 -c 100 -t 12 --timeout 8 http://127.0.0.1:8080/db
 Running 1m test @ http://127.0.0.1:8080/db
   12 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -50,13 +53,15 @@ Running 1m test @ http://127.0.0.1:8080/db
   18597 requests in 1.00m, 3.10MB read
 Requests/sec:    309.41
 Transfer/sec:     52.88KB
+```
 
 ## sanic
 ```bash
 python sanic_server_speed_test.py
 ```
 
->✗ wrk -d 60 -c 100 -t 12 --timeout 8 http://127.0.0.1:8080/db
+```
+✗ wrk -d 60 -c 100 -t 12 --timeout 8 http://127.0.0.1:8080/db
 Running 1m test @ http://127.0.0.1:8080/db
   12 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -65,6 +70,7 @@ Running 1m test @ http://127.0.0.1:8080/db
   36702 requests in 1.00m, 4.83MB read
 Requests/sec:    610.64
 Transfer/sec:     82.29KB
+```
 
 ## 结论
 从中等量级的压测的结果上看，对于异步架构的网络服务器，在性能上有了很大的提升。
