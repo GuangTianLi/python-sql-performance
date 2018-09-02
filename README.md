@@ -16,9 +16,7 @@ pipenv shell
 # SQL操作性能评估
 ```bash
 python postgresql_speed_test.py
-```
 
-```
   DBAPI:  psycopg2
          11004 function calls in 2.235 seconds
   DBAPI:  asyncpg
@@ -28,7 +26,7 @@ python postgresql_speed_test.py
   DBAPI:  psycopg2, total seconds 2.558364
   DBAPI:  asyncpg, total seconds 2.309759
   DBAPI:  uvloop, total seconds 2.032303  
-```     
+```
 
 ## 结论
 从结果上看，对于数据库操作本身，异步对于其性能本身只能算是锦上添花。而异步操作本身则也需要添加对事件循环的处理，
